@@ -21,6 +21,10 @@ const feathersClient = feathers()
     auth: {
       userService: '/users'
     }
+  }, {
+    // 'messages': { namespace: 'chats/messages' },
+    'messages': { namespace: ['chats', 'messages'] },
+    'users': { namespace: 'chats/users' }
   }))
 
 feathersClient.service('/users')

@@ -29,10 +29,10 @@ export default {
     ...mapState('auth', [
       'user'
     ]),
-    ...mapGetters('chats/messages', {
+    ...mapGetters('chat/messages', {
       findMessagesInStore: 'find'
     }),
-    ...mapGetters('chats/users', {
+    ...mapGetters('users', {
       users: 'list'
     }),
     messages () {
@@ -40,11 +40,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions('chats/messages', {
+    ...mapActions('messages', {
       findMessages: 'find',
       createMessage: 'create'
     }),
-    ...mapActions('chats/users', {
+    ...mapActions('users', {
       findUsers: 'find'
     }),
     ...mapActions('auth', [
